@@ -15,7 +15,56 @@ Notes
 Assertion messages may be unclear about what they display in some languages. 
 If you read "...It Should encode XXX", the "XXX" is the expected result, not the input!
 """
-cadena="din"
+cadena = "(( @"
+count_letters={}
+
+
+def func_duplicate(cadena):
+    new_cadena=""
+    for letra in cadena:
+        print(letra)
+        letra=letra.lower()
+        if letra in count_letters:
+            count_letters[letra]+= 1
+        else:
+            count_letters[letra]=1
+    print(count_letters)
+
+
+    for letra in cadena:
+        letra=letra.lower()
+        if letra in count_letters:
+            count=count_letters[letra]
+            print("Letra: ", letra, "Count: ", count)
+            if count > 1:
+                new_cadena+=")"
+                print("...",new_cadena)           
+            else: 
+                new_cadena+="("
+                print("...",new_cadena)   
+    return new_cadena
+
+print(func_duplicate(cadena))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+""" cadena="din"
 contador_letras={}
 
 def codifier(cadena):
@@ -54,5 +103,5 @@ def codifier(cadena):
     print("codifier: ", new_cadena)
 
 
-codifier(cadena)
+codifier(cadena) """
 
